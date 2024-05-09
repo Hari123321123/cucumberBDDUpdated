@@ -31,7 +31,7 @@ public class ElementUtils {
 	public void typeTextIntoElement(WebElement element,String textToBeTyped,long durationInSeconds) {
 		
 		WebElement webElement = waitForElement(element,durationInSeconds);
-		webElement.click();
+		
 		webElement.clear();
 		webElement.sendKeys(textToBeTyped);
 		
@@ -40,7 +40,7 @@ public class ElementUtils {
 	public WebElement waitForElement(WebElement element,long durationInSeconds) {
 		
 		WebElement webElement = null;
-		
+	
 		try {
 			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(durationInSeconds));
 			webElement = wait.until(ExpectedConditions.elementToBeClickable(element));

@@ -1,18 +1,20 @@
 package runner;
 
-import org.junit.runner.RunWith;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import org.testng.annotations.DataProvider;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(features="C:\\Users\\Admin\\git\\localrepo\\BDD\\src\\test\\resources\\features\\Mailsend_E2E.feature",
+//@RunWith(Cucumber.class)
+@CucumberOptions(features="C:\\Users\\Admin\\git\\localrepo\\BDD\\src\\test\\resources\\features\\Login.feature",
 				 glue={"stepdefinitions","hooks"},
 				 publish=true,
-				 plugin={"pretty","html:target/CucumberReports/CucumberReport.html"},
-				 tags= "@tt")
-public class TestRunner {
-	
-	
-
-}
+						
+				
+				 plugin={"pretty","html:target/CucumberReports/CucumberReport.html"})
+public class TestRunner extends AbstractTestNGCucumberTests {
+    @Override
+    @DataProvider(parallel = false)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }}

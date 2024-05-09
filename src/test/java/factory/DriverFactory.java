@@ -20,23 +20,15 @@ public class DriverFactory {
 	public static WebDriver initializeBrowser(String browserName) throws InterruptedException {
 		
 		
-		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");  
 		
+		
+		System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");  
 		ChromeOptions options = new ChromeOptions();
-	    options.addArguments("--profile-directory=Default");
-	    options.addArguments("--whitelisted-ips");
-	    options.addArguments("--start-maximized");
-	    options.addArguments("--disable-extensions");
-	    options.addArguments("--disable-plugins-discovery");
-	    WebDriver webDriver = new ChromeDriver(options);
-	    webDriver.navigate().to("https://accounts.google.com");
-	    Thread.sleep(3000);
-		/*ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
 		
 		DesiredCapabilities cp=new DesiredCapabilities();
 		cp.setCapability(ChromeOptions.CAPABILITY, options);
-        options.merge(cp);*/
+        options.merge(cp);
 		
 		
 		if(browserName.equals("chrome")) {
@@ -65,7 +57,6 @@ public class DriverFactory {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(CommonUtils.IMPLICIT_WAIT_TIME));
 		
 		return driver;
-		
 	}
 	
 	public static WebDriver getDriver() {

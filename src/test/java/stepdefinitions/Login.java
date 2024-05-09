@@ -1,9 +1,17 @@
 package stepdefinitions;
 
+import java.util.Properties;
+
 import org.junit.Assert;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 import factory.DriverFactory;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,13 +20,15 @@ import pages.AccountPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.CommonUtils;
+import utils.ConfigReader;
 
 public class Login {
 	
-	WebDriver driver;
+	 WebDriver driver;
 	private LoginPage loginPage;
 	private AccountPage accountPage;
 	private CommonUtils commonUtils;
+	
 	
 	@Given("User navigates to login page")
 	public void user_navigates_to_login_page() {
@@ -29,7 +39,6 @@ public class Login {
 		loginPage = homePage.selectLoginOption();
 	
 	}
-	
 	
 	@When("^User enters valid email address (.+) into email field$")
 	public void User_enters_valid_email_address_into_email_field(String emailText) {

@@ -36,7 +36,6 @@ public class Register {
 	public void user_enters_the_details_into_below_fields(DataTable dataTable) {
 		
 		Map<String, String> dataMap = dataTable.asMap(String.class,String.class);
-	    
 		registerPage.enterFirstName(dataMap.get("firstName"));
 		registerPage.enterLastName(dataMap.get("lastName"));
 		commonUtils = new CommonUtils();

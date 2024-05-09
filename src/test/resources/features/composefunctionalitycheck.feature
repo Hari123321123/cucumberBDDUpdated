@@ -14,6 +14,7 @@ Feature: Compose Functionality in Gmail
     And User clicks on the compose button
     Then The email should be saved as a draft in the Drafts folder
     And User should be able to access the saved draft later
+
   @test
   Scenario: Send email with valid mail_Id
     Given User is composing a new email
@@ -22,7 +23,6 @@ Feature: Compose Functionality in Gmail
     Then The email should be sent successfully
     And User should see a confirmation message
 
-
   Scenario Outline: Attachments
     Given User is composing a new email
     When User adds attachments of "<filesize>"
@@ -30,9 +30,9 @@ Feature: Compose Functionality in Gmail
     And User should be able to send the email with attachments
 
     Examples: 
-      | filesize |
-      |allowedsize|
-      |morethanlimit|
+      | filesize      |
+      | allowedsize   |
+      | morethanlimit |
 
   Scenario: Auto-save functionality
     Given User is composing a new email

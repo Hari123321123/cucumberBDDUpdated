@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utils.CommonUtils;
+import pages.GmailLoginPage;
 import pages.gmailcomposePage;
 
 public class Gmail_compose_functionality {
@@ -15,34 +16,34 @@ public class Gmail_compose_functionality {
 	
 	@Given("User is on the Gmail homepage")
 	public void user_is_on_the_gmail_homepage() {
-		driver = DriverFactory.getDriver();
+        driver = DriverFactory.getDriver();
+		GmailLoginPage p=new GmailLoginPage(driver);
 		
-		gmailcomposePage composepage=new gmailcomposePage(driver);
-		composepage.clickOncomposeButton();
-		
+		 p.enteremailaddress();
+		 p.clickonNextButton();
 		
 	}
 
 	@When("User clicks on the compose button")
 	public void user_clicks_on_the_button(String string) {
 		
-		
+		gmailcomposePage.clickOncomposeButton();
 	    
 	}
 	@When("User clicks on the Send button")
 	public void user_clicks_on_the_send_button() {
-	    
+		gmailcomposePage.clickOnsendButton();
 	}
 
 	@Then("User should see a new email composing window")
 	public void user_should_see_a_new_email_composing_window() {
-	    // Write code here that turns the phrase above into concrete actions
-		
+	   
+		gmailcomposePage.composewindowelementpresent();
 	}
 
 	@Then("User should be able to enter email recipients, subject, message body, and attachments")
 	public void user_should_be_able_to_enter_email_recipients_subject_message_body_and_attachments() {
-	    // Write code here that turns the phrase above into concrete actions
+	    
 	    
 	}
 

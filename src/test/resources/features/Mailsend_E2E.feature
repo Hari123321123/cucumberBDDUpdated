@@ -1,8 +1,10 @@
 
-@tt
+
 Feature: Mail send functionality e2e
 
   #positive scanario
+  
+  @test
   Scenario: Sending an Email Successfully with all valid fields
     Given User is on the Gmail homepage
     When User clicks on the compose button
@@ -25,6 +27,8 @@ Feature: Mail send functionality e2e
     And user successfully validate received message body as per sent format
 
   #Negative scenario
+  
+  
   Scenario Outline: Sending an Email with Wrong or missing  Information
     Given User is on the Gmail homepage
     When User clicks on the compose button
