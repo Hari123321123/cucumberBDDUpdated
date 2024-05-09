@@ -8,13 +8,19 @@
 	<groupId>CucumberBdd</groupId>
 	<artifactId>CucumberBdd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
- <repositories> <repository> <id>java-net-repo</id>
-  <url>https://maven.java.net/content/repositories/public/</url> 
-  </repository> 
-  </repositories>
+ 
 	<name>CucumberBdd</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
+	<distributionManagement>
+    <repository>
+        <uniqueVersion>false</uniqueVersion>
+        <id>corp1</id>
+        <name>Corporate Repository</name>
+        <url>file:/logs/.m2</url>
+        <layout>default</layout>
+    </repository>
+</distributionManagement>
 
 	 <properties>
 
