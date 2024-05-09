@@ -3,21 +3,21 @@ pipeline {
     stages {
         stage('compile') { 
             steps {
-                withMaven(maven :'maven3.9.6'){
+                withMaven(maven :'MAVEN_HOME'){
                 sh'mvn clean compile'
                 }
             }
         }
         stage('Test') { 
             steps {
-                 withMaven(maven :'maven3.9.6'){
+                 withMaven(maven :'MAVEN_HOME'){
                 sh 'mvn test' 
             }
             }
         }
         stage('Deploy') { 
             steps {
-                withMaven(maven :'maven3.9.6'){
+                withMaven(maven :'MAVEN_HOME'){
                 sh 'mvn deploy' 
             }}
         }
