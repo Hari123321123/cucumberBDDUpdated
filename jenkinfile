@@ -1,13 +1,13 @@
 pipeline {
-    agent any 
-    stages {
+      agent any 
+       stages {
         stage('compile') { 
             steps {
                 withMaven(maven :'MAVEN_HOME'){
                 sh'mvn clean compile'
                 }
             }
-        }
+           }
         stage('Test') { 
             steps {
                  withMaven(maven :'MAVEN_HOME'){
@@ -19,7 +19,9 @@ pipeline {
             steps {
                 withMaven(maven :'MAVEN_HOME'){
                 sh 'mvn deploy' 
-            }}
+         
         }
-    }
-}
+         }
+         }
+     }
+  }
