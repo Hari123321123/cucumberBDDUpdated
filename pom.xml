@@ -8,7 +8,10 @@
 	<groupId>CucumberBdd</groupId>
 	<artifactId>CucumberBdd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+ <repositories> <repository> <id>java-net-repo</id>
+  <url>https://maven.java.net/content/repositories/public/</url> 
+  </repository> 
+  </repositories>
 	<name>CucumberBdd</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
